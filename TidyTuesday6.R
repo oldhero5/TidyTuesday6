@@ -26,7 +26,8 @@ PI_plot <- ggplot(data = data, aes(date)) +
     y = "Date",
     color = "Legend") +
   theme_fivethirtyeight() +
-  facet_wrap(vars(state))
+  facet_wrap(vars(state))+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
 PI_plot
 
@@ -42,7 +43,8 @@ PI1_plot <- ggplot(data = data1, aes(date)) +
          y = "Date",
          color = "Legend") +
     theme_fivethirtyeight() +
-    facet_wrap(vars(state))
+    facet_wrap(vars(state))+
+    theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
 PI1_plot
 #DC is out of control
@@ -52,11 +54,12 @@ data_DC1 <- data1 %>% filter(state == "DC")
 DC_plot <- ggplot(data = data_DC, aes(date)) +
     geom_line(aes(y = price_index,color = "State Price Index")) +
     geom_line(aes(y = us_avg,color = "US AVG Price Index"))+  
-    labs(title = "Pre-Recession Housing Price Index by State",
+    labs(title = "Pre-Recession Housing Price Index in DC",
          x = "Price Index",
          y = "Date",
          color = "Legend") +
-    theme_fivethirtyeight()
+    theme_fivethirtyeight()+
+    theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
 DC_plot
 
@@ -66,11 +69,12 @@ DC1_plot <- ggplot(data = data_DC1, aes(date)) +
               fill = "#c6dbef")+
     geom_line(aes(y = price_index,color = "State Price Index")) +
     geom_line(aes(y = us_avg,color = "US AVG Price Index"))+
-    labs(title = "Post-Recession Housing Price Index by State",
+    labs(title = "Post-Recession Housing Price Index in DC",
          subtitle = "Shaded Area Represents Recession Period",
          x = "Price Index",
          y = "Date",
          color = "Legend") +
-    theme_fivethirtyeight()
+    theme_fivethirtyeight()+
+    theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
 DC1_plot
