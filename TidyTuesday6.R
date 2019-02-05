@@ -1,7 +1,6 @@
 #Tidy Tuesday
 #05FEB18
 library(tidyverse)
-library(esquisse)
 library(ggthemes)
 
 #readdata
